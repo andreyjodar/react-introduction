@@ -1,0 +1,82 @@
+npx create-react-app nome-do-projeto --> comando de criação do projeto
+npm start --> executar o projeto
+localhost:3000 --> endereço padrão do servidor da aplicação
+
+node_modules --> pasta de dependências do projeto (n deve ser enviada para o github)
+npm install --> instalar dependências (após fazer git clone do github)
+
+npm install react-router-dom --> instala biblioteca para recursos de navegação
+salvar arquivos com extensão .jsx (será compilado e interpretado pelo navegador)
+
+Estrutura do Componente (usar arrow function)
+const Home = () => {
+    const hello = () => {
+
+    }
+    return(
+        <>
+            <h1>Hello World!/h1>
+        </>
+    );
+}
+
+export default Home;
+
+const Calculadora = () => {
+    const [valor1, setValor1] = useState("");
+    const [valor2, setValor2] = useState("");
+    const [operador, setOperador] = useState("");
+    const [resultado, setResultado] = useState("");
+
+    const calcular = () => {
+        const v1 = parseFloat(valor1);
+        const v2 = parseFloat(valor2);
+        if(isNaN(v1) || isNaN(v2)) {
+            return setResultado("Valores Inválidos");
+        }
+
+        switch(operador) {
+            case "+":
+                setResultado(v1+v2);
+                break;
+            case "-":
+                setResultado(v1-v2);
+                break;
+            case "*":
+                setResultado(v1*v2);
+                break;
+            case "/":
+                setResultado(v2!== 0 ? v1/v2 : "Divisão por 0");
+                break;
+            default:
+                setResultado("Operador Inválido");
+        }
+    }
+
+    return(
+        <>
+            <input value={valor1} onChange={e=>setValor1(e.target.value)}/><br/>
+            <input value={valor2} onChange={e=>setValor2(e.target.value)}/><br/>
+            <input value={operador} onChange={e=>setOperador(e.target.value)}/><br/>
+            <button onClick={calcular}>Calcular</button><br/><br/>
+            {1==1 && resultado}
+        </>
+    );
+}
+
+App.js --> Arquivo Principal para desenvolvimento
+index.js --> Arquivo que inicia a renderização da página
+
+Dicas de organização:
+src/components --> pasta para componentes
+src/pages --> pasta para páginas
+
+Caso haja erros, olhe sempre:
+terminal --> apresenta erros
+página --> apresenta erros
+console --> apresenta erros
+
+SPA --> Single Page Application
+
+Componentes --> Conteúdos Reutilizáveis
+Ex: footer, header, etc.
