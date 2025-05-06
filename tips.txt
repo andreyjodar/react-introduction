@@ -80,3 +80,13 @@ SPA --> Single Page Application
 
 Componentes --> Conteúdos Reutilizáveis
 Ex: footer, header, etc.
+
+React --> biblioteca
+Next.js -> framework
+
+package.json --> onde as dependências estão declaradas
+public/index.html --> html interpretado pelo navegador
+
+src/index.js --> faz a renderização de index.html 
+hook --> recurso predefinido que fornece gets e sets (grosso modo)
+método assíncrono --> não faz a atribuição no exato momento
